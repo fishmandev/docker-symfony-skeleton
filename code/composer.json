@@ -18,6 +18,7 @@
         "trikoder/oauth2-bundle": "^3.2"
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.23"
     },
     "config": {
         "optimize-autoloader": true,
