@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,6 +20,10 @@ class ApiController extends AbstractController
      */
     public function index()
     {
-        return new JsonResponse('Hello to default API controller!');
+        /**
+         * @var User $user
+         */
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        return new JsonResponse('Hello ' . $user->getUsername() . '! Welcome to default API controller!');
     }
 }
