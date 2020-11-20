@@ -2,8 +2,6 @@ version: "3.3"
 services:
   nginx:
     image:  nginx:latest
-    ports:
-      - 80:80
     volumes:
       - ./code:/var/www/html
       - ./nginx/site.conf:/etc/nginx/conf.d/site.conf
