@@ -24,6 +24,6 @@ class ApiController extends AbstractController
          * @var User $user
          */
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
-        return new JsonResponse('Hello ' . $user->getUsername() . '! Welcome to default API controller!');
+        return new JsonResponse(['user' => $user->getUsername()]);
     }
 }
